@@ -1,0 +1,13 @@
+create form to ask for 3 text inputs;
+
+create string to hold user sentence;  _userManyWords
+create string to hold user word to be replaced;  _userTarget
+create string to hold user new word; _userReplace
+
+take sentence and separate it at " ";
+push each word into List;
+Loop through list and compare each word in list to the _userTarget
+if _userTarget == _userReplace then make one equal to the other.
+
+put words in list back into _userManyWords
+return _userManyWords to cshtml
