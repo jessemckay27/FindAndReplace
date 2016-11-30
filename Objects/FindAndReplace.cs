@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace FindAndReplace.Objects
+namespace FindReplace.Objects
 {
   public class FindAndReplace
   {
@@ -12,21 +12,25 @@ namespace FindAndReplace.Objects
     // private List<string> _manyWordsList = new List<string>{};
                          //may need to use parentheses    ();
 
-    public MatchWord(string userManyWords, string userTarget, string userReplace)
+    public FindAndReplace(string userManyWords, string userTarget, string userReplace)
     {
       _userManyWords = userManyWords;
       _userTarget = userTarget;
       _userReplace = userReplace;
+    }
+
+    public string MatchWord()
+    {
 
       string[] manyWordsSplit = _userManyWords.Split(' ');
-      foreach(string word in manyWordsSplit)
+      for (int i = 0; i < manyWordsSplit.Length; i++)
       {
-        if(word == _userTarget)
+        if (manyWordsSplit[i] == _userTarget)
         {
-          _userTarget = _userReplace;
+          manyWordsSplit[i] = _userReplace;
         }
       }
-      string.Join(" ", manyWordsSplit);
+      return string.Join(" ", manyWordsSplit);
     }
   }
 }
