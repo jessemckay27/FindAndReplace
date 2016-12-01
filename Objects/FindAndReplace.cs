@@ -9,9 +9,6 @@ namespace FindReplace.Objects
     private string _userTarget;
     private string _userReplace;
 
-    // private List<string> _manyWordsList = new List<string>{};
-                         //may need to use parentheses    ();
-
     public FindAndReplace(string userManyWords, string userTarget, string userReplace)
     {
       _userManyWords = userManyWords;
@@ -22,15 +19,15 @@ namespace FindReplace.Objects
     public string MatchWord()
     {
 
-      string[] manyWordsSplit = _userManyWords.Split(' ');
-      for (int i = 0; i < manyWordsSplit.Length; i++)
+      string[] _manyWordsSplit = _userManyWords.Split(' ');
+      for (int i = 0; i < _manyWordsSplit.Length; i++)
       {
-        if (manyWordsSplit[i] == _userTarget)
+        if (_manyWordsSplit[i] == _userTarget)
         {
-          manyWordsSplit[i] = _userReplace;
+          _manyWordsSplit[i] = _userReplace;
         }
       }
-      return string.Join(" ", manyWordsSplit);
+      return string.Join(" ", _manyWordsSplit);
     }
   }
 }
